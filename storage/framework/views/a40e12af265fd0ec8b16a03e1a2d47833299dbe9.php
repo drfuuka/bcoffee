@@ -1,0 +1,1 @@
+<?php /**PATH D:\Code\bcoffee\resources\views/layouts/partials/scripts.blade.php ENDPATH**/ ?>
