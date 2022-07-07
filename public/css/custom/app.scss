@@ -1,0 +1,113 @@
+$primary:#2a211b;
+$secPrimary:#f3e5dc;
+
+@import "root";
+@import "component/carousel";
+
+#promo {
+    .container {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+}
+
+#featured {
+    background-color: $primary;
+    height: 100vh;
+    color: #fff;
+    .row {
+        height: 100vh;
+        .icon-container {
+            display: flex;
+            border-radius: 50%;
+            background-color: #fff;
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            min-height: 50px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.199);
+            i {
+                margin: auto;
+                font-size: 20px;
+                color: #292929;
+            }
+        }
+    }
+}
+
+#best-seller {
+    background-color: $primary;
+    color: #fff;
+    padding-bottom: 300px;
+    .row {
+        margin-top: 200px;
+        .card {
+            background-color: $secPrimary;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            img {
+                width: 150px;
+                max-width: 40%;
+                position: absolute;
+                top: -30%;
+                right: 20px;
+            }
+        }
+    }
+}
+
+footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    .social-container {
+        margin-top: 30px;
+        position: relative;
+        background-color: #e7e7e7;
+        padding: 5px;
+        width: 50px;
+        height: 50px;
+        max-width: 50px;
+        min-width: 50px;
+        max-height: 50px;
+        min-height: 50px;
+        border-radius: 50%;
+        a {
+            display: flex;
+            i {
+                margin: auto;
+                font-size: 20px;
+                line-height: 2;
+                color: $primary;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    
+    #featured {
+        padding-top: 100px;
+        .row {
+            .img-container {
+                display: flex;
+                img {
+                    max-width: 200px;
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+    
+    #best-seller {
+        padding-top: 250px;
+        .row {
+            margin-top: 200px;
+            .card {
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+        }
+    }
+
+}
