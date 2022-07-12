@@ -50,7 +50,7 @@
                             <th>No.</th>
                             <th>Jenis</th>
                             <th>Ditampilkan</th>
-                            <th>Aksi</th>
+                            <th></th>
                         </tr>
                     </thead>
                 </table>

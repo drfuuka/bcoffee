@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data['bestSeller'] = Produk::where('populer', 1)->where('tampilkan', 1)->orderBy('populer_order')->get();
+        return view('home', $data);
     }
+
 }

@@ -32,6 +32,20 @@
                     </a>
                 </li>
 
+                <li class="{{ request()->is('admin/promo/*') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.promo.index') }}" class="waves-effect">
+                        <i class="bx bx-purchase-tag"></i></span>
+                        <span>Promo</span>
+                    </a>
+                </li>
+
+                <li class="{{ request()->is('admin/about/*') ? 'mm-active' : '' }}">
+                    <a href="{{ route('admin.about.index') }}" class="waves-effect">
+                        <i class="bx bx-user"></i></span>
+                        <span>Tentang Saya</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
         <!-- Sidebar -->

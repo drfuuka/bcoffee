@@ -20,7 +20,7 @@
         </div>
 
         @include('admin.layouts.partials.vendor-scripts')
-        <script src="assets/js/app.js"></script>
+        <script src="{{ asset('admin/assets/js/app.js')"></script>
 
     </body>
 

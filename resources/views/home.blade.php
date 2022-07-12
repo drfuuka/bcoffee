@@ -57,7 +57,7 @@
 			<div class="col-md-6 align-self-center">
 				<h3 class="fw-bold">Promo Mingguan!</h3>
 				<p>Baru! Minuman Klepon Series untuk menemani aktivitas kamu.</p>
-				<button class="btn btn-primary">Lihat semua promo</button>
+				<a href="{{ route('promo') }}" class="btn btn-primary">Lihat semua promo</a>
 			</div>
 			<div class="col-md-6 align-self-center mt-5 mt-md-0">
 				<div class="row justify-content-center">
@@ -125,7 +125,6 @@
 			</div>
 		</div>
 	</div>
-	</div>
 </section>
 
 <section id="best-seller">
@@ -133,88 +132,28 @@
 		<h1 class="display-4 fw-bold mb-5 text-center">Produk Terpopuler</h1>
 		<div class="row justify-content-center">
 			{{-- Start : Item --}}
-			<div class="col-10 col-lg-4">
-				<div class="card text-primary">
-					<img src="{{ asset('images/featured-coffee/1.png') }}" alt="" class="img-fluid item">
-					<div class="col-8">
-						<div class="p-3">
-							<div class="bg-primary text-white d-inline p-3 py-2 rounded-pill">
-								<span>Kopi</span>
+			@foreach ($bestSeller as $item)
+				<div class="col-10 col-lg-4 d-flex">
+					<div class="card text-primary w-100">
+						<img src="{{ asset('storage/'.$item['foto']) }}" alt="" class="img-fluid">
+						<div class="col-8">
+							<div class="p-3">
+								<div class="bg-primary text-white d-inline p-3 py-2 rounded-pill">
+									<span>{{ $item['jenis'] }}</span>
+								</div>
 							</div>
-						</div>
-						<div class="card-body">
-							<h3 class="fw-bold">Kopi Sejuta Umat</h3>
-							<span class="fw-bold">Rp.19K</span>
+							<div class="card-body">
+								<h5 class="fw-bold">{{ $item['nama_produk'] }}</h5>
+								<span class="fw-bold">Rp.{{ $item['harga'] }}</span>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-10 col-lg-4 mt-5 mt-lg-0">
-				<div class="card text-primary">
-					<img src="{{ asset('images/featured-coffee/1.png') }}" alt="" class="img-fluid item">
-					<div class="col-8">
-						<div class="p-3">
-							<div class="bg-primary text-white d-inline p-3 py-2 rounded-pill">
-								<span>Kopi</span>
-							</div>
-						</div>
-						<div class="card-body">
-							<h3 class="fw-bold">Kopi Sejuta Umat</h3>
-							<span class="fw-bold">Rp.19K</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-10 col-lg-4 mt-5 mt-lg-0">
-				<div class="card text-primary">
-					<img src="{{ asset('images/featured-coffee/1.png') }}" alt="" class="img-fluid item">
-					<div class="col-8">
-						<div class="p-3">
-							<div class="bg-primary text-white d-inline p-3 py-2 rounded-pill">
-								<span>Kopi</span>
-							</div>
-						</div>
-						<div class="card-body">
-							<h3 class="fw-bold">Kopi Sejuta Umat</h3>
-							<span class="fw-bold">Rp.19K</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			{{-- End : Item --}}
+			@endforeach
 		</div>
 	</div>
 	</div>
 </section>
-
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<h1 class="fw-bold">B'Coffee</h1>
-				<p class="mt-3 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate adipisci iste dignissimos cumque eaque, corporis quas hic quo fuga? Cum dolore, assumenda earum ex magni est expedita. Voluptate, adipisci nulla?</p>
-				<div class="d-flex gap-3">
-					<div class="social-container">
-						<a href="#"><i class="bi bi-facebook"></i></a>
-					</div>
-					<div class="social-container">
-						<a href="#"><i class="bi bi-instagram"></i></a>
-					</div>
-					<div class="social-container">
-						<a href="#"><i class="bi bi-facebook"></i></a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-8 mt-5 mt-md-0">
-				<div class="px-0 px-md5">
-					<h4 class="fw-bold">Our Location</h4>
-					<p class="mt-3">Jl. Pakubuwono VI No.107, RT.11/RW.2, Gunung, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12120</p>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.0805094342977!2d106.82498632926583!3d-6.636923751361836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c912cfd7966f%3A0x57f1fe430aac22b6!2sB&#39;Coffee!5e0!3m2!1sid!2sid!4v1656672691171!5m2!1sid!2sid" style="border:0; width: 100%; height: 350px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
 
 <script>
 	$(document).ready(function(){

@@ -20,5 +20,4 @@
 
 <!-- Responsive examples -->
 <script src="<?php echo e(asset('admin/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')); ?>"></script>
-<script src="<?php echo e(asset('admin/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')); ?>"></script>
-<script src="<?php echo e(asset('admin/assets/js/app.js')); ?>"></script><?php /**PATH D:\Code\bcoffee\resources\views/admin/layouts/partials/vendor-scripts.blade.php ENDPATH**/ ?>
+<script src="<?php echo e(asset('admin/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')); ?>"></script><?php /**PATH D:\Code\bcoffee\resources\views/admin/layouts/partials/vendor-scripts.blade.php ENDPATH**/ ?>

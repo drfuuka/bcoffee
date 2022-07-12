@@ -52,7 +52,7 @@
                         <div class="col-xl-12">
                             
                             <div class="row">
-                                <div class="col-lg-8">
+                                <div class="col-lg-7">
                                     <label for="nama-produk">Nama Produk</label>
                                     <input type="text" class="form-control <?php $__errorArgs = ['nama_produk'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -73,7 +73,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                 </div>
-                                <div class="col-lg-4 mt-3 mt-lg-0">
+                                <div class="col-lg-3 mt-3 mt-lg-0">
                                     <label for="harga">Harga</label>
                                     <input type="number" class="form-control <?php $__errorArgs = ['harga'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -94,7 +94,31 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                 </div>
-                                <div class="col-lg-8 mt-3">
+                                <div class="col-lg-2 mt-3 mt-lg-0">
+                                    <label for="tampilkan">Tampilkan</label>
+                                    <select name="tampilkan" id="" class="form-select <?php $__errorArgs = ['tampilkan'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>">
+                                        <option value="1">Ya</option>
+                                        <option value="2">Tidak</option>
+                                    </select>
+                                    <?php $__errorArgs = ['tampilkan'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                        <span class="text-danger mt-2 mb-2"><?php echo e($message); ?></span>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                </div>
+                                <div class="col-lg-7 mt-3">
                                     <label for="jenis">Pilih Jenis</label>
                                     <select name="jenis" class="form-select" id="jenis">
                                         <option value="" selected disabled>Pilih data</option>
@@ -113,7 +137,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                 </div>
-                                <div class="col-lg-4 mt-3">
+                                <div class="col-lg-5 mt-3">
                                     <label for="foto">Foto</label>
                                     <div class="d-flex gap-3">
                                         <div class="rounded overflow-hidden" style="width: 39px">
@@ -131,59 +155,10 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>" name="foto" id="foto">
+                                            <small>Ukuran Maksimal 7.5Mb, pastikan foto tidak memiliki background.</small>
                                         </div>
                                     </div>
                                     <?php $__errorArgs = ['foto'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                        <span class="text-danger mt-2 mb-2"><?php echo e($message); ?></span>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                </div>
-                                <div class="col-12 mt-3">
-                                    <label for="populer">Jadikan Produk Populer?</label>
-                                    <select name="populer" id="populer" class="form-select <?php $__errorArgs = ['populer'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" value="<?php echo e($produk['populer']); ?>">
-                                        <option value="1" <?php echo e($produk['populer'] == 1 ? 'selected' : ''); ?>>Ya</option>
-                                        <option value="2" <?php echo e($produk['populer'] == 2 ? 'selected' : ''); ?>>Tidak</option>
-                                    </select>
-                                    <?php $__errorArgs = ['populer'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                        <span class="text-danger mt-2 mb-2"><?php echo e($message); ?></span>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                </div>
-                                <div class="col-12 mt-3" id="populer-order-container">
-                                    <label for="populer-order">Pilih Urutan Tampilan Populer</label>
-                                    <select name="populer_order" id="populer-order" class="form-select <?php $__errorArgs = ['populer_order'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>">
-                                        <option selected disabled>Pilih Urutan</option>
-                                        <option value="1" <?php echo e($produk['populer_order'] == 1 ? 'selected' : ''); ?>>1</option>
-                                        <option value="2" <?php echo e($produk['populer_order'] == 2 ? 'selected' : ''); ?>>2</option>
-                                        <option value="3" <?php echo e($produk['populer_order'] == 3 ? 'selected' : ''); ?>>3</option>
-                                    </select>
-                                    <?php $__errorArgs = ['populer_order'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -211,19 +186,6 @@ unset($__errorArgs, $__bag); ?>
     </div>
     <!-- end col -->
 </div>
-<?php $__env->stopSection(); ?>
-<?php $__env->startSection('scripts'); ?>
-    <script>
-        $("select#populer").on('change', function() {
-            if($(this).val() == 1) {
-                $("#populer-order-container").show();
-                $("#populer-order-container select").val('1');
-            } else if ($(this).val() == 2) {
-                $("#populer-order-container").hide();
-                $("#populer-order-container select").val('');
-            }
-        });
-    </script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('admin.layouts.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Code\bcoffee\resources\views/admin/produk/edit.blade.php ENDPATH**/ ?>

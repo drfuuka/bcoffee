@@ -25,12 +25,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => 'dcd9c22ca04daf06413e1d3fba40e9dff33a64c6',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -52,6 +52,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'ca57d18f028f84f777b2168cd1911b0dee2343ae',
+    ),
+    'ckeditor/ckeditor' => 
+    array (
+      'pretty_version' => '4.19.0',
+      'version' => '4.19.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'db9342ad88e04de66dcf9b132ff41061727778c5',
     ),
     'cordoval/hamcrest-php' => 
     array (
@@ -455,12 +464,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'dcd9c22ca04daf06413e1d3fba40e9dff33a64c6',
     ),
     'laravel/sail' => 
     array (

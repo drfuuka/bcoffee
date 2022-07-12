@@ -30,7 +30,7 @@
 		</div>
 
 		<?php echo $__env->make('admin.layouts.partials.vendor-scripts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-		<script src="assets/js/app.js"></script>
+		<script src="<?php echo e(asset('admin/assets/js/app.js')); ?>"></script>
         <?php echo $__env->yieldContent('scripts'); ?>
 
     </body>

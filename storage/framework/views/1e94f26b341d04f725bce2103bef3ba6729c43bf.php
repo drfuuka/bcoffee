@@ -1,4 +1,5 @@
 <!-- Bootstrap Css -->
+<script src="<?php echo e(asset('admin/assets/libs/jquery/jquery.min.js')); ?>"></script>
 <link href="<?php echo e(asset('admin/assets/css/bootstrap.min.css')); ?>" id="bootstrap-style" rel="stylesheet" type="text/css" />
 <!-- Icons Css -->
 <link href="<?php echo e(asset('admin/assets/css/icons.min.css')); ?>" rel="stylesheet" type="text/css" />

@@ -51,21 +51,31 @@
                         <div class="col-xl-12">
                             
                             <div class="row">
-                                <div class="col-lg-8">
+                                <div class="col-lg-7">
                                     <label for="nama-produk">Nama Produk</label>
                                     <input type="text" class="form-control @error('nama_produk') is-invalid @enderror" placeholder="Masukkan nama produk" name="nama_produk" id="nama-produk" value="{{ $produk['nama_produk'] }}">
                                     @error('nama_produk')
                                         <span class="text-danger mt-2 mb-2">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="col-lg-4 mt-3 mt-lg-0">
+                                <div class="col-lg-3 mt-3 mt-lg-0">
                                     <label for="harga">Harga</label>
                                     <input type="number" class="form-control @error('harga') is-invalid @enderror" placeholder="Masukkan harga" name="harga" id="harga" value="{{ $produk['harga'] }}">
                                     @error('harga')
                                         <span class="text-danger mt-2 mb-2">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="col-lg-8 mt-3">
+                                <div class="col-lg-2 mt-3 mt-lg-0">
+                                    <label for="tampilkan">Tampilkan</label>
+                                    <select name="tampilkan" id="" class="form-select @error('tampilkan') is-invalid @enderror">
+                                        <option value="1">Ya</option>
+                                        <option value="2">Tidak</option>
+                                    </select>
+                                    @error('tampilkan')
+                                        <span class="text-danger mt-2 mb-2">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-7 mt-3">
                                     <label for="jenis">Pilih Jenis</label>
                                     <select name="jenis" class="form-select" id="jenis">
                                         <option value="" selected disabled>Pilih data</option>
@@ -77,7 +87,7 @@
                                         <span class="text-danger mt-2 mb-2">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class="col-lg-4 mt-3">
+                                <div class="col-lg-5 mt-3">
                                     <label for="foto">Foto</label>
                                     <div class="d-flex gap-3">
                                         <div class="rounded overflow-hidden" style="width: 39px">
@@ -88,31 +98,10 @@
                                         <small class="text-center">Current Image</small>
                                         <div class="w-100">
                                             <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" id="foto">
+                                            <small>Ukuran Maksimal 7.5Mb, pastikan foto tidak memiliki background.</small>
                                         </div>
                                     </div>
                                     @error('foto')
-                                        <span class="text-danger mt-2 mb-2">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="col-12 mt-3">
-                                    <label for="populer">Jadikan Produk Populer?</label>
-                                    <select name="populer" id="populer" class="form-select @error('populer') is-invalid @enderror" value="{{ $produk['populer'] }}">
-                                        <option value="1" {{ $produk['populer'] == 1 ? 'selected' : '' }}>Ya</option>
-                                        <option value="2" {{ $produk['populer'] == 2 ? 'selected' : '' }}>Tidak</option>
-                                    </select>
-                                    @error('populer')
-                                        <span class="text-danger mt-2 mb-2">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="col-12 mt-3" id="populer-order-container">
-                                    <label for="populer-order">Pilih Urutan Tampilan Populer</label>
-                                    <select name="populer_order" id="populer-order" class="form-select @error('populer_order') is-invalid @enderror">
-                                        <option selected disabled>Pilih Urutan</option>
-                                        <option value="1" {{ $produk['populer_order'] == 1 ? 'selected' : '' }}>1</option>
-                                        <option value="2" {{ $produk['populer_order'] == 2 ? 'selected' : '' }}>2</option>
-                                        <option value="3" {{ $produk['populer_order'] == 3 ? 'selected' : '' }}>3</option>
-                                    </select>
-                                    @error('populer_order')
                                         <span class="text-danger mt-2 mb-2">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -133,17 +122,4 @@
     </div>
     <!-- end col -->
 </div>
-@endsection
-@section('scripts')
-    <script>
-        $("select#populer").on('change', function() {
-            if($(this).val() == 1) {
-                $("#populer-order-container").show();
-                $("#populer-order-container select").val('1');
-            } else if ($(this).val() == 2) {
-                $("#populer-order-container").hide();
-                $("#populer-order-container select").val('');
-            }
-        });
-    </script>
 @endsection

@@ -13,5 +13,6 @@ class Produk extends Model
         'nama_produk',
         'harga',
         'jenis',
+        'tampilkan'
     ];
 }

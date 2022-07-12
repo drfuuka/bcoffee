@@ -52,7 +52,8 @@
                             <th>Harga</th>
                             <th>Jenis</th>
                             <th>Foto</th>
-                            <th>Aksi</th>
+                            <th>Tampilkan Produk</th>
+                            <th></th>
                         </tr>
                     </thead>
                 </table>
@@ -60,13 +61,64 @@
             </div>
             <!-- end card body -->
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="populer-modal" tabindex="-1" aria-labelledby="populer-modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="populer-modalLabel">Jadikan produk <b class="text-primary" id="populer-product-name"></b> populer?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="{{ route('admin.produk.create-populer') }}" method="POST">
+                        @csrf
+                        <div class="modal-body">
+                            <input type="hidden" id="id-parameter" name="id_parameter" value="">
+                            <label for="populer-order">Pilih Urutan</label>
+                            <select name="populer_order" id="populer-order" class="form-select">
+                                @foreach ($availableOrder as $item)
+                                    <option value="{{$item}}">{{ $item }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <!-- end card -->
+
     </div>
     <!-- end col -->
+
 </div>
+
+<script>
+    function getDataPopuler(product_name, id) {
+        $("#populer-product-name").text(product_name);
+        $("#id-parameter").val(id);
+    }
+    function toggleShow(param) {
+        if($("form#update-"+param+" #toggle-show-"+param).is(":checked")) {
+            $("form#update-"+param+" #tampilkan-"+param).val('1');
+        } else {
+            $("form#update-"+param+" #tampilkan-"+param).val('2');
+        }
+        setTimeout(() => {
+            $("form#update-"+param+" button").trigger('click');
+        }, 300);
+        console.log($("form#update-"+param+" #tampilkan-"+param).val());
+    }
+</script>
 
 @section('scripts')
 <script>
+    $("#populer-modal").on('hide.bs.modal', function(){
+        $("#id-parameter").val("");
+    });
     $(document).ready(function() {
         var dataTable = $("#datatable").DataTable({
             proccessing: true,
@@ -87,6 +139,7 @@
                 { data: 'harga', name: 'harga' },
                 { data: 'jenis', name: 'jenis' },
                 { data: 'foto', name: 'foto' },
+                { data: 'tampilkan', name: 'tampilkan' },
                 {
                     data: 'action',
                     name: 'action',
